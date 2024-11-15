@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import user from '../assets/user.png'
 import { to } from './../../node_modules/moment/src/lib/moment/to';
 const Navber = () => {
@@ -14,7 +14,7 @@ const Navber = () => {
            </div>
            <div className='flex items-center gap-2'>
            <img src={user}alt="" />
-           <button className='px-6 py-1 bg-black text-white font-bold'>login</button>
+           <Link to={'/auth/login'} className='px-6 py-1 bg-black text-white font-bold'>login</Link>
            
            </div>
 
