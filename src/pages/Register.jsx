@@ -3,7 +3,7 @@ import { AuthContext } from '../Provider/AuthProvider';
 
 
 const Register = () => {
-  const {createuser,setuser}=useContext(AuthContext)
+  const {createuser,setuser,updateuser}=useContext(AuthContext)
   const handleregister = (e)=>{
     e.preventDefault();
     const form = new FormData(e.target)
@@ -11,15 +11,25 @@ const Register = () => {
     const url = form.get('url')
     const email = form.get('email')
     const password = form.get('password')
-    console.log(email,password)
+   
 
     createuser(email,password)
     .then((res)=>{
-      console.log(res.user)
+     
       setuser(res.user)
+      const profile = {
+        displayName: name,
+        photoURL: url
+      }
+      updateuser(profile)
+      .then(res=>{
+       
+        setuser(res.user)
+      })
+     
     })
     .catch(error=>{
-      console.log(error.message)
+     
     })
   }
     return (

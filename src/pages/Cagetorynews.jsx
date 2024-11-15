@@ -5,7 +5,7 @@ import News from '../components/News';
 
 const Cagetorynews = () => {
     const {data} = useLoaderData()
-    console.log(data)
+   
    
     return (
         <div>
