@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaEye, FaRegBookmark, FaShareAlt, FaStar } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const News = ({newscard}) => {
     return (
@@ -30,7 +31,7 @@ const News = ({newscard}) => {
       </div>
 
       {/* Details */}
-      <p className="text-gray-600 text-sm my-2">{newscard.details.slice(0, 150)}... <span className="text-blue-500 cursor-pointer">Read More</span></p>
+      <p className="text-gray-600 text-sm my-2">{newscard.details.slice(0, 150)}... <Link to={`/news/${newscard._id}`} className="text-blue-500 cursor-pointer">Read More</Link></p>
 
       {/* Rating and Views */}
       <div className="flex items-center justify-between mt-4">

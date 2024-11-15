@@ -5,6 +5,7 @@ import Cagetorynews from '../pages/Cagetorynews';
 import Authlayout from '../layouts/Authlayout';
 import Login from '../pages/Login';
 import Register from '../pages/Register';
+import Newspaper from '../pages/Newspaper';
 
 
 const mainroute = createBrowserRouter([{
@@ -34,6 +35,11 @@ const mainroute = createBrowserRouter([{
     path:'/auth/register',
     element:<Register/>
 }]
+},
+{
+    path:'news/:id',
+    element:<Newspaper/>,
+    loader:({params})=> fetch(`https://openapi.programming-hero.com/api/news/${params.id}`)
 }
 
 ])
